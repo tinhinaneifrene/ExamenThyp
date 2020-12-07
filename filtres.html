@@ -13,7 +13,7 @@
 
 <body>
 <div class="container">
-    <h4 style="text-align: center;">News with filtre </h4>
+    <h4 style="text-align: center;">News /filtres </h4>
 
     <div class="row">
             
@@ -72,13 +72,13 @@
     function showItems(data) {
         document.getElementById('items').innerHTML = "";
         let cards = d3.select('#items').selectAll(".col-4").data(data).enter()
-            .append('div').attr('class', 'col-sm-6 mb-12').style('margin-bottom', '13px')
+            .append('div').attr('class', 'col-sm-4 mb-12').style('margin-bottom', '13px')
             .append("div").attr('class', 'card');
 
         let cardBody = cards.append('div').attr('class', 'card-body');
         cardBody
-            .append('h5').text((d) => d["o:title"]).style('color','red')
-            .append('h3').text((d) =>  "identifiants :" + d["o:id"]) .style('color', 'black') 
+            .append('h5').text((d) => d["o:title"])
+            .append('h3').text((d) => d["o:id"])
             .append('img')
             .attr('id', (d, i) => 'imgCard' + d["o:id"])
             .attr('class', 'center card-img-top')
